@@ -1,0 +1,13 @@
+node_modules/
+build*/
+renders/
+fin_frames/
+stills/
+public/assets/*/audio.wav
+audio/cache/
+__pycache__/
+scripts/.probe-tmp/
+.venv/
+.render-bundle-*/
+*.render.lock
+.render-*

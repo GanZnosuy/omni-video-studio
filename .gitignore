@@ -1,0 +1,34 @@
+# Environment & Secrets
+.env
+*.env
+*.key
+*.pem
+*.token
+credentials.json
+gemini_cookies.json
+
+# Python & Node Caches
+__pycache__/
+*.py[cod]
+*$py.class
+node_modules/
+.npm/
+dist/
+build/
+.cache/
+
+# Large Raw Video & Audio Dumps (>10MB)
+*.mp4
+*.mov
+*.avi
+*.wmv
+*.mkv
+*.flac
+
+# OS specific files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+*.log
+*.tmp

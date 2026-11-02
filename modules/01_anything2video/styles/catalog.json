@@ -1,0 +1,1493 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Selection families group appearances only. IDs, renderer imports, seeds and recipe associations are never aliases. runtimeSkin explicitly distinguishes config.style support from manually composed kits.",
+  "families": [
+    {
+      "id": "dark-editorial",
+      "name": "暗色信息设计",
+      "members": [
+        "deep-space",
+        "mg-purple"
+      ],
+      "reason": "共享暗底与信息版式；青色产品宣传和紫色知识讲解仍保留各自皮肤、配方和覆盖层。"
+    },
+    {
+      "id": "miniature-diorama",
+      "name": "微缩等距场景",
+      "members": [
+        "isometric-city",
+        "clay-town"
+      ],
+      "reason": "共享等距投影；硬面建筑的位移与黏土软材质的逐帧弹动分别保留。"
+    },
+    {
+      "id": "impressionist",
+      "name": "印象派光色",
+      "members": [
+        "light-dabs",
+        "lily-pond"
+      ],
+      "reason": "共享光斑短笔触语法；前者固定笔位，后者水面与植物分档沸腾，保留各自参数和场景。"
+    },
+    {
+      "id": "print-motion",
+      "name": "套色印刷",
+      "members": [
+        "ink-plate",
+        "riso-print"
+      ],
+      "reason": "共享分版与套印；四墨网格几何编舞和双色滚筒工艺仍是两个独立变体。"
+    }
+  ],
+  "showcaseSections": [
+    {
+      "id": "clear-explainers",
+      "name": "图文讲解",
+      "description": "从白板板书到大字排版，让文字、图形和重点信息走到画面前。"
+    },
+    {
+      "id": "night-and-future",
+      "name": "夜色与未来",
+      "description": "暗色背景、发光线条和复古电子屏，呈现不同的科技氛围。"
+    },
+    {
+      "id": "paper-and-handmade",
+      "name": "纸艺与手绘",
+      "description": "撕纸、折页、涂鸦和弹跳小人，保留手工制作的趣味。"
+    },
+    {
+      "id": "miniature-and-depth",
+      "name": "立体与微缩",
+      "description": "从玩具般的小镇到影棚物件，用空间、材质和镜头讲故事。"
+    },
+    {
+      "id": "heritage-and-ink",
+      "name": "古典与东方",
+      "description": "岩壁、陶器、金箔、皮影与水墨，把传统材料带进画面。"
+    },
+    {
+      "id": "paint-and-light",
+      "name": "光影与绘画",
+      "description": "用笔触、水色、天光和阴影，营造安静、明亮或浓烈的情绪。"
+    },
+    {
+      "id": "shapes-and-dreams",
+      "name": "图形与幻想",
+      "description": "液滴相融、图形变身、空间扭曲，适合浏览大胆的视觉变化。"
+    },
+    {
+      "id": "print-and-ornament",
+      "name": "印刷与装饰",
+      "description": "错位套色、细密刻线、藤蔓花框与金色纹样，突出图案和纸面质感。"
+    }
+  ],
+  "styles": [
+    {
+      "id": "deep-space",
+      "name": "深空",
+      "description": "深空黑底 #0B0B12 + 电光青强调；冷峻产品向的默认答案，真 UI 截图最出效果。",
+      "notes": "",
+      "recipe": "promo",
+      "vibes": [
+        "cool"
+      ],
+      "runtimeSkin": true,
+      "family": "dark-editorial",
+      "source": "template/src/recipes/styles/deep-space.ts",
+      "preview": {
+        "status": "available",
+        "path": "deep-space-sample.mp4",
+        "poster": "posters/deep-space-sample.jpg"
+      },
+      "showcase": {
+        "section": "night-and-future",
+        "summary": "深黑底配冷青亮色，让产品画面更醒目"
+      }
+    },
+    {
+      "id": "neon",
+      "name": "霓虹",
+      "description": "夜幕 + 白芯彩晕霓虹描边 + 雨丝湿地反光，能量感强。",
+      "notes": "",
+      "recipe": "promo",
+      "vibes": [
+        "glow",
+        "cool"
+      ],
+      "runtimeSkin": true,
+      "family": "neon",
+      "source": "styles/neon",
+      "preview": {
+        "status": "available",
+        "path": "neon-sample.mp4",
+        "poster": "posters/neon-sample.jpg"
+      },
+      "showcase": {
+        "section": "night-and-future",
+        "summary": "霓虹亮边映着雨夜反光，像走进发光街景"
+      }
+    },
+    {
+      "id": "swiss-print",
+      "name": "版式",
+      "description": "严格四色（白/黑/红/灰）、超大 grotesk 900、12 列网格、大量留白、硬切精确位移。",
+      "notes": "",
+      "recipe": "promo",
+      "vibes": [
+        "cool"
+      ],
+      "runtimeSkin": true,
+      "family": "swiss-print",
+      "source": "styles/swiss-print",
+      "preview": {
+        "status": "available",
+        "path": "swiss-print-sample.mp4",
+        "poster": "posters/swiss-print-sample.jpg"
+      },
+      "showcase": {
+        "section": "clear-explainers",
+        "summary": "黑白红大字配整齐留白，像会动的海报"
+      }
+    },
+    {
+      "id": "crt-terminal",
+      "name": "终端",
+      "description": "黑绿磷光 + 等宽字逐字敲入 + 扫描线，CLI 工程美学。",
+      "notes": "",
+      "recipe": "promo",
+      "vibes": [
+        "cool",
+        "glow"
+      ],
+      "runtimeSkin": true,
+      "family": "crt-terminal",
+      "source": "styles/crt-terminal",
+      "preview": {
+        "status": "available",
+        "path": "crt-terminal-sample.mp4",
+        "poster": "posters/crt-terminal-sample.jpg"
+      },
+      "showcase": {
+        "section": "night-and-future",
+        "summary": "黑底绿字逐字敲出，重现老式电脑屏幕"
+      }
+    },
+    {
+      "id": "mg-purple",
+      "name": "夜航",
+      "description": "黑底紫调 + HUD/章节卡/流程轨——a2v 出身的讲解脸，知识科普主线。",
+      "notes": "",
+      "recipe": "explainer",
+      "vibes": [
+        "cool"
+      ],
+      "runtimeSkin": true,
+      "family": "dark-editorial",
+      "source": "template/src/recipes/styles/mg-purple.ts",
+      "preview": {
+        "status": "available",
+        "path": "mg-purple-sample.mp4",
+        "poster": "posters/mg-purple-sample.jpg"
+      },
+      "showcase": {
+        "section": "night-and-future",
+        "summary": "黑底紫色章节卡，沿着清晰步骤展开讲解"
+      }
+    },
+    {
+      "id": "chalk",
+      "name": "黑板",
+      "description": "深绿黑板 + 白垩压力笔触（颗粒/粉尘/双影）+ 板书字 + 板擦转场。",
+      "notes": "",
+      "recipe": "explainer",
+      "vibes": [
+        "warm"
+      ],
+      "runtimeSkin": true,
+      "family": "chalk",
+      "source": "styles/chalk",
+      "preview": {
+        "status": "available",
+        "path": "chalk-sample.mp4",
+        "poster": "posters/chalk-sample.jpg"
+      },
+      "showcase": {
+        "section": "clear-explainers",
+        "summary": "深绿黑板配粉笔字，擦写之间带出课堂感"
+      }
+    },
+    {
+      "id": "blueprint",
+      "name": "蓝图",
+      "description": "深蓝晒图底 + 白工程线 + 黄色尺寸标注——「把系统当造物拆解」的精密工程隐喻。",
+      "notes": "",
+      "recipe": "explainer",
+      "vibes": [
+        "cool"
+      ],
+      "runtimeSkin": true,
+      "family": "blueprint",
+      "source": "styles/blueprint",
+      "preview": {
+        "status": "available",
+        "path": "blueprint-sample.mp4",
+        "poster": "posters/blueprint-sample.jpg"
+      },
+      "showcase": {
+        "section": "clear-explainers",
+        "summary": "深蓝底上铺开白色线稿，像在读工程图纸"
+      }
+    },
+    {
+      "id": "pixel-arcade",
+      "name": "街机",
+      "description": "8px 像素网格 + CRT 扫描线 + 品红/荧绿/金有限色；所有\"圆\"都是方块拼的。",
+      "notes": "",
+      "recipe": "explainer",
+      "vibes": [
+        "retro",
+        "glow"
+      ],
+      "runtimeSkin": true,
+      "family": "pixel-arcade",
+      "source": "styles/pixel-arcade",
+      "preview": {
+        "status": "available",
+        "path": "pixel-arcade-sample.mp4",
+        "poster": "posters/pixel-arcade-sample.jpg"
+      },
+      "showcase": {
+        "section": "night-and-future",
+        "summary": "彩色方块拼出画面，找回老街机的趣味"
+      }
+    },
+    {
+      "id": "paper-collage",
+      "name": "拼贴",
+      "description": "Vox 式撕纸边缘 + 纸片投影 + 胶带（qr-scan 验证片即此风格全片实作）。",
+      "notes": "",
+      "recipe": "explainer",
+      "vibes": [
+        "warm"
+      ],
+      "runtimeSkin": true,
+      "family": "paper-collage",
+      "source": "styles/paper-collage",
+      "preview": {
+        "status": "available",
+        "path": "paper-collage-sample.mp4",
+        "poster": "posters/paper-collage-sample.jpg"
+      },
+      "showcase": {
+        "section": "paper-and-handmade",
+        "summary": "撕纸边、胶带和叠放纸片，拼出手作感"
+      }
+    },
+    {
+      "id": "epic-paper",
+      "name": "神话",
+      "description": "暖纸白信息层 + 印章红 + 描金辅色；三幕旗舰：雾山世界叶落 → 描金年代轴穿越 → 俯视茶碗印章钤落。",
+      "notes": "",
+      "recipe": "epic",
+      "vibes": [
+        "warm"
+      ],
+      "runtimeSkin": true,
+      "family": "epic-paper",
+      "source": "template/src/recipes/styles/epic-paper.ts",
+      "preview": {
+        "status": "available",
+        "path": "epic-paper-sample.mp4",
+        "poster": "posters/epic-paper-sample.jpg"
+      },
+      "showcase": {
+        "section": "heritage-and-ink",
+        "summary": "暖纸、朱红印章与金线，铺开古风叙事"
+      }
+    },
+    {
+      "id": "sand",
+      "name": "沙画",
+      "description": "灯箱沙画全工艺：手影铺沙显影 → 抹沙破晓出海（碎金光路）→ 体积光落窗台。",
+      "notes": "",
+      "recipe": "epic",
+      "vibes": [
+        "warm"
+      ],
+      "runtimeSkin": true,
+      "family": "sand",
+      "source": "styles/sand",
+      "preview": {
+        "status": "available",
+        "path": "sand-sample.mp4",
+        "poster": "posters/sand-sample.jpg"
+      },
+      "showcase": {
+        "section": "heritage-and-ink",
+        "summary": "手影铺开细沙，擦出海上晨光与窗边光影"
+      }
+    },
+    {
+      "id": "guofeng-scroll",
+      "name": "月窗",
+      "description": "暖黑底描金月窗 + 竖排题跋 + 朱印 + 长卷横移 + 唯一虹彩主角；国风历史叙事。",
+      "notes": "",
+      "recipe": "epic",
+      "vibes": [
+        "warm"
+      ],
+      "runtimeSkin": false,
+      "family": "guofeng-scroll",
+      "source": "styles/guofeng-scroll",
+      "preview": {
+        "status": "available",
+        "path": "guofeng-scroll-sample.mp4",
+        "poster": "posters/guofeng-scroll-sample.jpg"
+      },
+      "showcase": {
+        "section": "heritage-and-ink",
+        "summary": "金线月窗配竖排题字，像缓缓展开的长卷"
+      }
+    },
+    {
+      "id": "paperclip-sticker",
+      "name": "贴纸人",
+      "description": "主体贴纸化粗白描边 + 超宽大画布摄像机串信息点 + 精确图表（count-up/柱状/描边）。",
+      "notes": "",
+      "recipe": "explainer",
+      "vibes": [
+        "cool"
+      ],
+      "runtimeSkin": false,
+      "family": "paperclip-sticker",
+      "source": "styles/paperclip-sticker",
+      "preview": {
+        "status": "available",
+        "path": "paperclip-sticker-sample.mp4",
+        "poster": "posters/paperclip-sticker-sample.jpg"
+      },
+      "showcase": {
+        "section": "clear-explainers",
+        "summary": "白边贴纸串起信息，跟着镜头边走边看"
+      }
+    },
+    {
+      "id": "hanazi-916",
+      "name": "花字",
+      "description": "综艺花字三层描边 + 弹簧逐字入场 + 爆炸框/闪光/印章符号；9:16 竖屏原生（画幅=卡属性）。",
+      "notes": "",
+      "recipe": "explainer",
+      "vibes": [
+        "warm"
+      ],
+      "runtimeSkin": false,
+      "family": "hanazi-916",
+      "source": "styles/hanazi-916",
+      "preview": {
+        "status": "available",
+        "path": "hanazi-916-sample.mp4",
+        "poster": "posters/hanazi-916-sample.jpg"
+      },
+      "showcase": {
+        "section": "clear-explainers",
+        "summary": "彩色大字蹦进竖屏，带着综艺式热闹节奏"
+      }
+    },
+    {
+      "id": "line-art",
+      "name": "线条",
+      "description": "等宽细线一笔画 + draw-on 自我描绘 + 线转面 + 大量负空间；墨+唯一暖金双色。",
+      "notes": "",
+      "recipe": "explainer",
+      "vibes": [
+        "cool"
+      ],
+      "runtimeSkin": false,
+      "family": "line-art",
+      "source": "styles/line-art",
+      "preview": {
+        "status": "available",
+        "path": "line-art-sample.mp4",
+        "poster": "posters/line-art-sample.jpg"
+      },
+      "showcase": {
+        "section": "clear-explainers",
+        "summary": "细线一笔笔画出轮廓，黑金配色干净舒展"
+      }
+    },
+    {
+      "id": "pop-comic",
+      "name": "波普",
+      "description": "粗黑描边硬错位阴影 + 半调网点 + 拟声词爆炸星 + 贴纸拍入（0.16s 砸落）；高饱和有限色。",
+      "notes": "",
+      "recipe": "promo",
+      "vibes": [
+        "warm",
+        "retro"
+      ],
+      "runtimeSkin": false,
+      "family": "pop-comic",
+      "source": "styles/pop-comic",
+      "preview": {
+        "status": "available",
+        "path": "pop-comic-sample.mp4",
+        "poster": "posters/pop-comic-sample.jpg"
+      },
+      "showcase": {
+        "section": "paper-and-handmade",
+        "summary": "粗黑线配鲜艳网点，爆炸框带出漫画冲劲"
+      }
+    },
+    {
+      "id": "popup-book",
+      "name": "立体书",
+      "description": "牛皮纸立体书 + rotateX 铰链翻折（地影随折角）+ 三层视差 + 拉页转场。",
+      "notes": "",
+      "recipe": "explainer",
+      "vibes": [
+        "warm"
+      ],
+      "runtimeSkin": false,
+      "family": "popup-book",
+      "source": "styles/popup-book",
+      "preview": {
+        "status": "available",
+        "path": "popup-book-sample.mp4",
+        "poster": "posters/popup-book-sample.jpg"
+      },
+      "showcase": {
+        "section": "paper-and-handmade",
+        "summary": "牛皮纸场景随书页翻起，像打开立体绘本"
+      }
+    },
+    {
+      "id": "clay-town",
+      "name": "黏土",
+      "description": "等轴黏土小镇（软材质手捏感 + kawaii 拟人件）+ 双层标注（白话比喻+真实术语）。",
+      "notes": "",
+      "recipe": "explainer",
+      "vibes": [
+        "warm"
+      ],
+      "runtimeSkin": false,
+      "family": "miniature-diorama",
+      "source": "styles/clay-town",
+      "preview": {
+        "status": "available",
+        "path": "clay-town-sample.mp4",
+        "poster": "posters/clay-town-sample.jpg"
+      },
+      "showcase": {
+        "section": "miniature-and-depth",
+        "summary": "像手捏出来的黏土小镇，柔软圆润又亲切"
+      }
+    },
+    {
+      "id": "studio-oneshot",
+      "name": "一镜",
+      "description": "three.js 石墨影棚一镜到底 + 瓷质道具 + 双色 rim + 假景深；Hermite 相机禁停泊。",
+      "notes": "",
+      "recipe": "epic",
+      "vibes": [
+        "cool",
+        "glow"
+      ],
+      "runtimeSkin": false,
+      "family": "studio-oneshot",
+      "source": "styles/studio-oneshot",
+      "preview": {
+        "status": "available",
+        "path": "studio-oneshot-sample.mp4",
+        "poster": "posters/studio-oneshot-sample.jpg"
+      },
+      "showcase": {
+        "section": "miniature-and-depth",
+        "summary": "镜头穿行暗色影棚，瓷质物件泛起双色光"
+      }
+    },
+    {
+      "id": "isometric-city",
+      "name": "等轴",
+      "description": "30° 等轴微缩世界（SSR 三面纯 CSS）+ 楼体生长 + 整组平移三层视差。",
+      "notes": "",
+      "recipe": "promo",
+      "vibes": [
+        "cool"
+      ],
+      "runtimeSkin": false,
+      "family": "miniature-diorama",
+      "source": "styles/isometric-city",
+      "preview": {
+        "status": "available",
+        "path": "isometric-city-sample.mp4",
+        "poster": "posters/isometric-city-sample.jpg"
+      },
+      "showcase": {
+        "section": "miniature-and-depth",
+        "summary": "斜看微缩城市，楼房一座座长出并移过"
+      }
+    },
+    {
+      "id": "aurora-glass",
+      "name": "玻璃",
+      "description": "暗底弥散光斑慢漂 + 磨砂玻璃卡 + 皆慢呼吸节奏；慢、透、高级。",
+      "notes": "",
+      "recipe": "promo",
+      "vibes": [
+        "cool",
+        "glow"
+      ],
+      "runtimeSkin": false,
+      "family": "aurora-glass",
+      "source": "styles/aurora-glass",
+      "preview": {
+        "status": "available",
+        "path": "aurora-glass-sample.mp4",
+        "poster": "posters/aurora-glass-sample.jpg"
+      },
+      "showcase": {
+        "section": "night-and-future",
+        "summary": "柔光在暗处慢慢漂移，磨砂玻璃卡片透亮"
+      }
+    },
+    {
+      "id": "liquid-flow",
+      "name": "液态",
+      "description": "goo 液态融合 + 波浪前沿转场 + 拉丝断裂回弹 + 次级液滴跟随；有机曲线永不直线。",
+      "notes": "",
+      "recipe": "promo",
+      "vibes": [
+        "warm"
+      ],
+      "runtimeSkin": false,
+      "family": "liquid-flow",
+      "source": "styles/liquid-flow",
+      "preview": {
+        "status": "available",
+        "path": "liquid-flow-sample.mp4",
+        "poster": "posters/liquid-flow-sample.jpg"
+      },
+      "showcase": {
+        "section": "shapes-and-dreams",
+        "summary": "圆润液滴相融又拉开，像流动的彩色软胶"
+      }
+    },
+    {
+      "id": "morph",
+      "name": "形变",
+      "description": "图形丝滑互变（中介简形桥接）+ 挤压拉伸 + 位移旋转；图形叙事核心语法。",
+      "notes": "",
+      "recipe": "promo",
+      "vibes": [
+        "cool",
+        "glow"
+      ],
+      "runtimeSkin": false,
+      "family": "morph",
+      "source": "styles/morph",
+      "preview": {
+        "status": "available",
+        "path": "morph-sample.mp4",
+        "poster": "posters/morph-sample.jpg"
+      },
+      "showcase": {
+        "section": "shapes-and-dreams",
+        "summary": "图形不断伸缩变身，一个形状接着另一个"
+      }
+    },
+    {
+      "id": "pop-dot",
+      "name": "弹点",
+      "description": "六色平涂 + SHADE 自明暗对 + 弹簧物理三段 + 色块擦除转场；企业 explainer 弹性 MG。",
+      "notes": "",
+      "recipe": "explainer",
+      "vibes": [
+        "warm"
+      ],
+      "runtimeSkin": false,
+      "family": "pop-dot",
+      "source": "styles/pop-dot",
+      "preview": {
+        "status": "available",
+        "path": "pop-dot-sample.mp4",
+        "poster": "posters/pop-dot-sample.jpg"
+      },
+      "showcase": {
+        "section": "shapes-and-dreams",
+        "summary": "明快色块弹跳入场，轻轻挤压后再回弹"
+      }
+    },
+    {
+      "id": "ink-boil",
+      "name": "线沸",
+      "description": "逐帧线沸腾：变宽笔刷 + 错位填色 + 低帧率打帧时基；手绘动画的生命感。",
+      "notes": "",
+      "recipe": "explainer",
+      "vibes": [
+        "warm"
+      ],
+      "runtimeSkin": false,
+      "family": "ink-boil",
+      "source": "styles/ink-boil",
+      "preview": {
+        "status": "available",
+        "path": "ink-boil-sample.mp4",
+        "poster": "posters/ink-boil-sample.jpg"
+      },
+      "showcase": {
+        "section": "paper-and-handmade",
+        "summary": "线条轻轻抖动、色块略微错位，像手绘草稿"
+      }
+    },
+    {
+      "id": "ink-plate",
+      "name": "墨版",
+      "description": "包豪斯丝印：几何编舞 + 双版错位 + 十字规线；印刷秩序感。",
+      "notes": "",
+      "recipe": "explainer",
+      "vibes": [
+        "retro"
+      ],
+      "runtimeSkin": false,
+      "family": "print-motion",
+      "source": "styles/ink-plate",
+      "preview": {
+        "status": "available",
+        "path": "ink-plate-sample.mp4",
+        "poster": "posters/ink-plate-sample.jpg"
+      },
+      "showcase": {
+        "section": "print-and-ornament",
+        "summary": "几何色块交错移动，像纸上错位叠印的油墨"
+      }
+    },
+    {
+      "id": "soft-jelly",
+      "name": "软糖",
+      "description": "C4D 软渲染：SSS 软胶材质 + 克隆阵列波；治愈系 3D。",
+      "notes": "",
+      "recipe": "explainer",
+      "vibes": [
+        "glow"
+      ],
+      "runtimeSkin": false,
+      "family": "soft-jelly",
+      "source": "styles/soft-jelly",
+      "preview": {
+        "status": "available",
+        "path": "soft-jelly-sample.mp4",
+        "poster": "posters/soft-jelly-sample.jpg"
+      },
+      "showcase": {
+        "section": "miniature-and-depth",
+        "summary": "软糖般的立体物件，成排起伏像柔软波浪"
+      }
+    },
+    {
+      "id": "vhs-outrun",
+      "name": "公路夜",
+      "description": "合成波 VHS：网格地平线 + 切缝日落 + rgbSplit/扫描线。",
+      "notes": "",
+      "recipe": "promo",
+      "vibes": [
+        "retro",
+        "glow"
+      ],
+      "runtimeSkin": false,
+      "family": "vhs-outrun",
+      "source": "styles/vhs-outrun",
+      "preview": {
+        "status": "available",
+        "path": "vhs-outrun-sample.mp4",
+        "poster": "posters/vhs-outrun-sample.jpg"
+      },
+      "showcase": {
+        "section": "night-and-future",
+        "summary": "网格公路通向落日，带着旧录像带的色差"
+      }
+    },
+    {
+      "id": "target-lock",
+      "name": "锁定",
+      "description": "赛博 HUD/FUI：锁定编排 + 数据位流 + 空间化 UI；雷达扫描叙事。",
+      "notes": "",
+      "recipe": "explainer",
+      "vibes": [
+        "cool",
+        "glow"
+      ],
+      "runtimeSkin": false,
+      "family": "target-lock",
+      "source": "styles/target-lock",
+      "preview": {
+        "status": "available",
+        "path": "target-lock-sample.mp4",
+        "poster": "posters/target-lock-sample.jpg"
+      },
+      "showcase": {
+        "section": "night-and-future",
+        "summary": "雷达圆环扫描锁定，像电影中的未来仪表"
+      }
+    },
+    {
+      "id": "swirl-oil",
+      "name": "星涡",
+      "description": "梵高后印象派：流场长笔触三遍分区 + 区域色板 + 星空漩涡转场。",
+      "notes": "",
+      "recipe": "explainer",
+      "vibes": [
+        "warm"
+      ],
+      "runtimeSkin": false,
+      "family": "swirl-oil",
+      "source": "styles/swirl-oil",
+      "preview": {
+        "status": "available",
+        "path": "swirl-oil-sample.mp4",
+        "poster": "posters/swirl-oil-sample.jpg"
+      },
+      "showcase": {
+        "section": "paint-and-light",
+        "summary": "长笔触卷成星空漩涡，浓烈色彩随之流动"
+      }
+    },
+    {
+      "id": "cave-wall",
+      "name": "岩壁",
+      "description": "史前岩壁画：赭红手印 + 粗粝矿彩 + 火光摇曳。",
+      "notes": "",
+      "recipe": "explainer",
+      "vibes": [
+        "warm",
+        "retro"
+      ],
+      "runtimeSkin": false,
+      "family": "cave-wall",
+      "source": "styles/cave-wall",
+      "preview": {
+        "status": "available",
+        "path": "cave-wall-sample.mp4",
+        "poster": "posters/cave-wall-sample.jpg"
+      },
+      "showcase": {
+        "section": "heritage-and-ink",
+        "summary": "赭红手印落在粗粝岩壁，火光摇出远古感"
+      }
+    },
+    {
+      "id": "tomb-wall",
+      "name": "墓室",
+      "description": "古埃及墓室壁画：正面律人物 + 象形注记 + 圣甲虫推日轮。",
+      "notes": "",
+      "recipe": "explainer",
+      "vibes": [
+        "warm",
+        "retro"
+      ],
+      "runtimeSkin": false,
+      "family": "tomb-wall",
+      "source": "styles/tomb-wall",
+      "preview": {
+        "status": "available",
+        "path": "tomb-wall-sample.mp4",
+        "poster": "posters/tomb-wall-sample.jpg"
+      },
+      "showcase": {
+        "section": "heritage-and-ink",
+        "summary": "古埃及人物与象形符号，沿着壁画讲故事"
+      }
+    },
+    {
+      "id": "amphora",
+      "name": "陶瓶",
+      "description": "希腊黑绘陶瓶：黑釉剪影 + 橙红陶底 + 环形叙事带。",
+      "notes": "",
+      "recipe": "explainer",
+      "vibes": [
+        "retro"
+      ],
+      "runtimeSkin": false,
+      "family": "amphora",
+      "source": "styles/amphora",
+      "preview": {
+        "status": "available",
+        "path": "amphora-sample.mp4",
+        "poster": "posters/amphora-sample.jpg"
+      },
+      "showcase": {
+        "section": "heritage-and-ink",
+        "summary": "黑色剪影衬橙红陶底，故事环绕古希腊陶瓶"
+      }
+    },
+    {
+      "id": "mosaic",
+      "name": "马赛克",
+      "description": "庞贝马赛克：万块石子拼图 + 逐块震颤 + 镶边警句。",
+      "notes": "",
+      "recipe": "explainer",
+      "vibes": [
+        "retro"
+      ],
+      "runtimeSkin": false,
+      "family": "mosaic",
+      "source": "styles/mosaic",
+      "preview": {
+        "status": "available",
+        "path": "mosaic-sample.mp4",
+        "poster": "posters/mosaic-sample.jpg"
+      },
+      "showcase": {
+        "section": "heritage-and-ink",
+        "summary": "细小石块拼出图案，带着古老镶嵌画质感"
+      }
+    },
+    {
+      "id": "gold-leaf",
+      "name": "金箔",
+      "description": "哥特金箔手抄本：贴金菱格 + 泥金首字母 + 抄写员夜灯。",
+      "notes": "",
+      "recipe": "explainer",
+      "vibes": [
+        "warm",
+        "glow"
+      ],
+      "runtimeSkin": false,
+      "family": "gold-leaf",
+      "source": "styles/gold-leaf",
+      "preview": {
+        "status": "available",
+        "path": "gold-leaf-sample.mp4",
+        "poster": "posters/gold-leaf-sample.jpg"
+      },
+      "showcase": {
+        "section": "heritage-and-ink",
+        "summary": "金箔纹样与华丽字母，映着抄写员的夜灯"
+      }
+    },
+    {
+      "id": "whiplash-line",
+      "name": "鞭线",
+      "description": "慕夏新艺术：鞭线生长 + 粗细呼吸 + 海报藤蔓框。",
+      "notes": "",
+      "recipe": "explainer",
+      "vibes": [
+        "warm"
+      ],
+      "runtimeSkin": false,
+      "family": "whiplash-line",
+      "source": "styles/whiplash-line",
+      "preview": {
+        "status": "available",
+        "path": "whiplash-line-sample.mp4",
+        "poster": "posters/whiplash-line-sample.jpg"
+      },
+      "showcase": {
+        "section": "print-and-ornament",
+        "summary": "藤蔓般的弧线伸展，围成优雅海报花框"
+      }
+    },
+    {
+      "id": "grain-flat",
+      "name": "颗粒扁平",
+      "description": "当代扁平插画：噪点颗粒 + 姿势库表演 + 挤压拉伸。",
+      "notes": "",
+      "recipe": "explainer",
+      "vibes": [
+        "warm"
+      ],
+      "runtimeSkin": false,
+      "family": "grain-flat",
+      "source": "styles/grain-flat",
+      "preview": {
+        "status": "available",
+        "path": "grain-flat-sample.mp4",
+        "poster": "posters/grain-flat-sample.jpg"
+      },
+      "showcase": {
+        "section": "clear-explainers",
+        "summary": "平涂色块配细碎颗粒，人物动作富有弹性"
+      }
+    },
+    {
+      "id": "gold-robe",
+      "name": "金袍",
+      "description": "克里姆特：金袍图案裹身 + 写实脸孔 + 马赛克金纹。",
+      "notes": "",
+      "recipe": "explainer",
+      "vibes": [
+        "warm",
+        "glow"
+      ],
+      "runtimeSkin": false,
+      "family": "gold-robe",
+      "source": "styles/gold-robe",
+      "preview": {
+        "status": "available",
+        "path": "gold-robe-sample.mp4",
+        "poster": "posters/gold-robe-sample.jpg"
+      },
+      "showcase": {
+        "section": "print-and-ornament",
+        "summary": "金色纹样裹住人物，脸孔与华丽图案相映"
+      }
+    },
+    {
+      "id": "dot-infinity",
+      "name": "波点",
+      "description": "草间弥生：波点铺满一切 + 南瓜阵 + 点阵呼吸。",
+      "notes": "",
+      "recipe": "explainer",
+      "vibes": [
+        "retro"
+      ],
+      "runtimeSkin": false,
+      "family": "dot-infinity",
+      "source": "styles/dot-infinity",
+      "preview": {
+        "status": "available",
+        "path": "dot-infinity-sample.mp4",
+        "poster": "posters/dot-infinity-sample.jpg"
+      },
+      "showcase": {
+        "section": "shapes-and-dreams",
+        "summary": "波点铺满南瓜与画面，点阵一呼一吸"
+      }
+    },
+    {
+      "id": "hard-light",
+      "name": "硬光",
+      "description": "霍珀式硬边光：光斑斜切房间 + 长影 + 城市孤独。",
+      "notes": "",
+      "recipe": "explainer",
+      "vibes": [
+        "warm"
+      ],
+      "runtimeSkin": false,
+      "family": "hard-light",
+      "source": "styles/hard-light",
+      "preview": {
+        "status": "available",
+        "path": "hard-light-sample.mp4",
+        "poster": "posters/hard-light-sample.jpg"
+      },
+      "showcase": {
+        "section": "paint-and-light",
+        "summary": "斜光切入安静房间，长长阴影带出孤独感"
+      }
+    },
+    {
+      "id": "dance-line",
+      "name": "舞线",
+      "description": "凯斯·哈林：街头小人 + 全局 BPM 弹跳 + 涂鸦能量。",
+      "notes": "",
+      "recipe": "explainer",
+      "vibes": [
+        "warm",
+        "glow"
+      ],
+      "runtimeSkin": false,
+      "family": "dance-line",
+      "source": "styles/dance-line",
+      "preview": {
+        "status": "available",
+        "path": "dance-line-sample.mp4",
+        "poster": "posters/dance-line-sample.jpg"
+      },
+      "showcase": {
+        "section": "paper-and-handmade",
+        "summary": "涂鸦小人跟着节拍蹦跳，画面充满活力"
+      }
+    },
+    {
+      "id": "rubberhose",
+      "name": "橡皮管",
+      "description": "1930s 橡皮管动画：无关节软肢 + 摆线波动 + 复古晨曲。",
+      "notes": "",
+      "recipe": "explainer",
+      "vibes": [
+        "warm",
+        "retro"
+      ],
+      "runtimeSkin": false,
+      "family": "rubberhose",
+      "source": "styles/rubberhose",
+      "preview": {
+        "status": "available",
+        "path": "rubberhose-sample.mp4",
+        "poster": "posters/rubberhose-sample.jpg"
+      },
+      "showcase": {
+        "section": "paper-and-handmade",
+        "summary": "软软的手脚摇摆伸展，像早期卡通动画"
+      }
+    },
+    {
+      "id": "shadow-play",
+      "name": "皮影",
+      "description": "中国皮影：刀刻镂空 + 关节杆件 + 油灯白布影窗。",
+      "notes": "",
+      "recipe": "explainer",
+      "vibes": [
+        "warm",
+        "retro"
+      ],
+      "runtimeSkin": false,
+      "family": "shadow-play",
+      "source": "styles/shadow-play",
+      "preview": {
+        "status": "available",
+        "path": "shadow-play-sample.mp4",
+        "poster": "posters/shadow-play-sample.jpg"
+      },
+      "showcase": {
+        "section": "heritage-and-ink",
+        "summary": "镂空人物在灯前活动，白布上映出皮影戏"
+      }
+    },
+    {
+      "id": "sfumato",
+      "name": "晕涂",
+      "description": "达·芬奇晕涂法：轮廓溶进光雾 + 层层罩染。",
+      "notes": "",
+      "recipe": "explainer",
+      "vibes": [
+        "warm"
+      ],
+      "runtimeSkin": false,
+      "family": "sfumato",
+      "source": "styles/sfumato",
+      "preview": {
+        "status": "available",
+        "path": "sfumato-sample.mp4",
+        "poster": "posters/sfumato-sample.jpg"
+      },
+      "showcase": {
+        "section": "paint-and-light",
+        "summary": "轮廓融入柔和光雾，颜色层层晕开"
+      }
+    },
+    {
+      "id": "light-dabs",
+      "name": "光斑",
+      "description": "莫奈印象派：碎笔光斑 + 颜色换班 + stable() 防重洗。",
+      "notes": "",
+      "recipe": "explainer",
+      "vibes": [
+        "warm",
+        "glow"
+      ],
+      "runtimeSkin": false,
+      "family": "impressionist",
+      "source": "styles/light-dabs",
+      "preview": {
+        "status": "available",
+        "path": "light-dabs-sample.mp4",
+        "poster": "posters/light-dabs-sample.jpg"
+      },
+      "showcase": {
+        "section": "paint-and-light",
+        "summary": "碎短笔触汇成光斑，色彩缓缓变换"
+      }
+    },
+    {
+      "id": "facets",
+      "name": "切面",
+      "description": "立体主义：形体拆成切面 + 多视角并置。",
+      "notes": "",
+      "recipe": "explainer",
+      "vibes": [
+        "cool"
+      ],
+      "runtimeSkin": false,
+      "family": "facets",
+      "source": "styles/facets",
+      "preview": {
+        "status": "available",
+        "path": "facets-sample.mp4",
+        "poster": "posters/facets-sample.jpg"
+      },
+      "showcase": {
+        "section": "shapes-and-dreams",
+        "summary": "物体拆成几何切面，不同角度同时展开"
+      }
+    },
+    {
+      "id": "chrome-ball",
+      "name": "铬球",
+      "description": "早期光追：铬球 + 棋盘房间 + 无限反射；90 年代 CG 崇拜。",
+      "notes": "",
+      "recipe": "explainer",
+      "vibes": [
+        "cool"
+      ],
+      "runtimeSkin": false,
+      "family": "chrome-ball",
+      "source": "styles/chrome-ball",
+      "preview": {
+        "status": "available",
+        "path": "chrome-ball-sample.mp4",
+        "poster": "posters/chrome-ball-sample.jpg"
+      },
+      "showcase": {
+        "section": "miniature-and-depth",
+        "summary": "金属球映着棋盘房间，像早期电脑动画"
+      }
+    },
+    {
+      "id": "scream-warp",
+      "name": "呐喊",
+      "description": "蒙克：世界随呐喊扭曲 + 血色天空 + 桥上不安身影。",
+      "notes": "",
+      "recipe": "explainer",
+      "vibes": [
+        "glow"
+      ],
+      "runtimeSkin": false,
+      "family": "scream-warp",
+      "source": "styles/scream-warp",
+      "preview": {
+        "status": "available",
+        "path": "scream-warp-sample.mp4",
+        "poster": "posters/scream-warp-sample.jpg"
+      },
+      "showcase": {
+        "section": "shapes-and-dreams",
+        "summary": "血红天空扭曲翻涌，桥上身影透出不安"
+      }
+    },
+    {
+      "id": "soft-clock",
+      "name": "软钟",
+      "description": "达利超现实：软钟挂枝滴淌 + 荒漠长影。",
+      "notes": "",
+      "recipe": "explainer",
+      "vibes": [
+        "retro"
+      ],
+      "runtimeSkin": false,
+      "family": "soft-clock",
+      "source": "styles/soft-clock",
+      "preview": {
+        "status": "available",
+        "path": "soft-clock-sample.mp4",
+        "poster": "posters/soft-clock-sample.jpg"
+      },
+      "showcase": {
+        "section": "shapes-and-dreams",
+        "summary": "柔软时钟垂挂在荒漠，长影拉出梦境感"
+      }
+    },
+    {
+      "id": "watercolor-cel",
+      "name": "水彩赛璐璐",
+      "description": "吉卜力式水彩赛璐璐：水彩底 + 赛璐璐角色 + 风的层次。",
+      "notes": "",
+      "recipe": "explainer",
+      "vibes": [
+        "warm"
+      ],
+      "runtimeSkin": false,
+      "family": "watercolor-cel",
+      "source": "styles/watercolor-cel",
+      "preview": {
+        "status": "available",
+        "path": "watercolor-cel-sample.mp4",
+        "poster": "posters/watercolor-cel-sample.jpg"
+      },
+      "showcase": {
+        "section": "paint-and-light",
+        "summary": "水彩背景衬着动画人物，风吹出层层动感"
+      }
+    },
+    {
+      "id": "lily-pond",
+      "name": "睡莲",
+      "description": "莫奈睡莲：水面记光 + 莲叶漂移 + 柳影摇晃。",
+      "notes": "",
+      "recipe": "explainer",
+      "vibes": [
+        "warm",
+        "glow"
+      ],
+      "runtimeSkin": false,
+      "family": "impressionist",
+      "source": "styles/lily-pond",
+      "preview": {
+        "status": "available",
+        "path": "lily-pond-sample.mp4",
+        "poster": "posters/lily-pond-sample.jpg"
+      },
+      "showcase": {
+        "section": "paint-and-light",
+        "summary": "莲叶漂在粼粼水面，柳影与光色轻轻摇晃"
+      }
+    },
+    {
+      "id": "optical-dots",
+      "name": "点彩",
+      "description": "修拉点彩：纯色圆点并置 + 视觉混色。",
+      "notes": "",
+      "recipe": "explainer",
+      "vibes": [
+        "glow"
+      ],
+      "runtimeSkin": false,
+      "family": "optical-dots",
+      "source": "styles/optical-dots",
+      "preview": {
+        "status": "available",
+        "path": "optical-dots-sample.mp4",
+        "poster": "posters/optical-dots-sample.jpg"
+      },
+      "showcase": {
+        "section": "paint-and-light",
+        "summary": "细小彩点并排铺开，远看汇成柔和色彩"
+      }
+    },
+    {
+      "id": "candle-light",
+      "name": "烛光",
+      "description": "伦勃朗明暗：单烛光源 + 暗部吞没 + 光照处才存在。",
+      "notes": "",
+      "recipe": "explainer",
+      "vibes": [
+        "warm",
+        "glow"
+      ],
+      "runtimeSkin": false,
+      "family": "candle-light",
+      "source": "styles/candle-light",
+      "preview": {
+        "status": "available",
+        "path": "candle-light-sample.mp4",
+        "poster": "posters/candle-light-sample.jpg"
+      },
+      "showcase": {
+        "section": "paint-and-light",
+        "summary": "一束烛光照亮暗处，让明暗成为画面主角"
+      }
+    },
+    {
+      "id": "cumulus-light",
+      "name": "积雨云",
+      "description": "新海诚式天光：积雨云 + 丁达尔光柱 + 高饱和渐变。",
+      "notes": "",
+      "recipe": "explainer",
+      "vibes": [
+        "warm",
+        "glow"
+      ],
+      "runtimeSkin": false,
+      "family": "cumulus-light",
+      "source": "styles/cumulus-light",
+      "preview": {
+        "status": "available",
+        "path": "cumulus-light-sample.mp4",
+        "poster": "posters/cumulus-light-sample.jpg"
+      },
+      "showcase": {
+        "section": "paint-and-light",
+        "summary": "高耸云团间透出光柱，天空色彩明亮浓郁"
+      }
+    },
+    {
+      "id": "blue-period",
+      "name": "蓝时期",
+      "description": "毕加索蓝时期：整片蓝调 + 慢半拍的情绪。",
+      "notes": "",
+      "recipe": "explainer",
+      "vibes": [
+        "cool"
+      ],
+      "runtimeSkin": false,
+      "family": "blue-period",
+      "source": "styles/blue-period",
+      "preview": {
+        "status": "available",
+        "path": "blue-period-sample.mp4",
+        "poster": "posters/blue-period-sample.jpg"
+      },
+      "showcase": {
+        "section": "paint-and-light",
+        "summary": "蓝色铺满画面，缓慢节奏带出低沉情绪"
+      }
+    },
+    {
+      "id": "whiteboard",
+      "name": "白板",
+      "description": "白板马克笔：讲一句画一句 + 笔尖跟随 + 多色批注墨水分工。",
+      "notes": "",
+      "recipe": "promo",
+      "vibes": [
+        "cool"
+      ],
+      "runtimeSkin": false,
+      "family": "whiteboard",
+      "source": "styles/whiteboard",
+      "preview": {
+        "status": "available",
+        "path": "whiteboard-sample.mp4",
+        "poster": "posters/whiteboard-sample.jpg"
+      },
+      "showcase": {
+        "section": "clear-explainers",
+        "summary": "彩色笔尖边讲边画，像面对面在白板说明"
+      }
+    },
+    {
+      "id": "kinetic-type",
+      "name": "字动",
+      "description": "动态文字排版：重点词砸进重音 + 词位编排。",
+      "notes": "",
+      "recipe": "explainer",
+      "vibes": [
+        "glow"
+      ],
+      "runtimeSkin": false,
+      "family": "kinetic-type",
+      "source": "styles/kinetic-type",
+      "preview": {
+        "status": "available",
+        "path": "kinetic-type-sample.mp4",
+        "poster": "posters/kinetic-type-sample.jpg"
+      },
+      "showcase": {
+        "section": "clear-explainers",
+        "summary": "重点词跟着节奏跳出来，让文字成为主角"
+      }
+    },
+    {
+      "id": "riso-print",
+      "name": "孔版",
+      "description": "Risograph 孔版印刷：双色版叠印 + 网点质感 + 套准偏移。",
+      "notes": "",
+      "recipe": "explainer",
+      "vibes": [
+        "retro"
+      ],
+      "runtimeSkin": false,
+      "family": "print-motion",
+      "source": "styles/riso-print",
+      "preview": {
+        "status": "available",
+        "path": "riso-print-sample.mp4",
+        "poster": "posters/riso-print-sample.jpg"
+      },
+      "showcase": {
+        "section": "print-and-ornament",
+        "summary": "双色油墨错位叠在一起，留下细密印刷网点"
+      }
+    },
+    {
+      "id": "math-lab",
+      "name": "数学屋",
+      "description": "数学可视化小屋：规律演示图形化 + 直觉先行。",
+      "notes": "",
+      "recipe": "explainer",
+      "vibes": [
+        "cool"
+      ],
+      "runtimeSkin": false,
+      "family": "math-lab",
+      "source": "styles/math-lab",
+      "preview": {
+        "status": "available",
+        "path": "math-lab-sample.mp4",
+        "poster": "posters/math-lab-sample.jpg"
+      },
+      "showcase": {
+        "section": "clear-explainers",
+        "summary": "让几何图形动起来，把抽象规律画给你看"
+      }
+    },
+    {
+      "id": "hypnotic",
+      "name": "催眠",
+      "description": "迷幻催眠：同心圈漩涡 + 视觉后效 + 节律牵引。",
+      "notes": "",
+      "recipe": "explainer",
+      "vibes": [
+        "glow"
+      ],
+      "runtimeSkin": false,
+      "family": "hypnotic",
+      "source": "styles/hypnotic",
+      "preview": {
+        "status": "available",
+        "path": "hypnotic-sample.mp4",
+        "poster": "posters/hypnotic-sample.jpg"
+      },
+      "showcase": {
+        "section": "shapes-and-dreams",
+        "summary": "同心圆卷成旋转漩涡，循环节奏带来迷幻感"
+      }
+    },
+    {
+      "id": "ink-tea",
+      "name": "水墨",
+      "description": "中国水墨写意：淡墨洇开 + 留白呼吸 + 浓淡五色。",
+      "notes": "",
+      "recipe": "explainer",
+      "vibes": [
+        "warm"
+      ],
+      "runtimeSkin": false,
+      "family": "ink-tea",
+      "source": "styles/ink-tea",
+      "preview": {
+        "status": "available",
+        "path": "ink-tea-sample.mp4",
+        "poster": "posters/ink-tea-sample.jpg"
+      },
+      "showcase": {
+        "section": "heritage-and-ink",
+        "summary": "淡墨在纸上缓缓洇开，浓淡与留白相映"
+      }
+    },
+    {
+      "id": "isometric-anatomy",
+      "name": "等距剖解",
+      "description": "可拆装机器与系统剖解图元；已有源码，尚无随包渲染样片。",
+      "notes": "实验图元：需手动接线；没有已验证的预览。",
+      "recipe": "explainer",
+      "vibes": [
+        "cool"
+      ],
+      "runtimeSkin": false,
+      "family": "isometric-anatomy",
+      "source": "styles/isometric-anatomy",
+      "preview": {
+        "status": "missing",
+        "path": null,
+        "poster": null
+      },
+      "showcase": {
+        "section": "miniature-and-depth",
+        "summary": "机器分层拆解的实验素材，暂无随包预览"
+      }
+    },
+    {
+      "id": "engraving",
+      "name": "铜版雕刻",
+      "description": "随形凹版排线、交叉加深、渐细刀口与后置透明设色；原创梨形演示。",
+      "notes": "12 秒无声材质研究；横屏与原生竖屏均有源码和实渲染。",
+      "recipe": "explainer",
+      "vibes": [
+        "retro",
+        "warm"
+      ],
+      "runtimeSkin": true,
+      "family": "engraving",
+      "source": "styles/engraving",
+      "preview": {
+        "status": "available",
+        "path": "engraving-sample.mp4",
+        "poster": "posters/engraving-sample.jpg"
+      },
+      "showcase": {
+        "section": "print-and-ornament",
+        "summary": "细密刻线描出梨形，十二秒无声材质研究"
+      }
+    }
+  ]
+}

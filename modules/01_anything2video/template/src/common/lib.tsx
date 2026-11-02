@@ -1,0 +1,120 @@
+import React from 'react';
+import {AbsoluteFill, continueRender, delayRender, staticFile} from 'remotion';
+import {VIDEO} from '../config';
+
+// 画布与帧号约定：1280×720@30fps；帧号 N 从 1 起（N = useCurrentFrame() + F0，F0 = 镜头 ShotDef.from）。
+export const W = 1280;
+export const H = 720;
+export const FPS = 30;
+
+// ---- 构图锚点（方案 §U13：promo-style-guide §1.2 安全区与锚点的代码化，explainer 同画布 1280×720 通用）----
+export const SAFE = {
+  content: {x: 60, y: 110, w: 1160, h: 550}, // 内容区 x60–1220 / y110–660：所有大字、小注、演示图形只放这里
+  full: {cx: 640, cy: 330}, // 全屏锚：钩子 / 独立卖点屏 / CTA 端板的主标中心
+  coexist: {cx: 640, cy: 545}, // 共存锚：演示主体占上 2/3 时的主标中心
+  subBand: {top: 637, h: 53}, // 字幕带（与 common/Subtitle.tsx 的 SUB_STYLE.top 现值对齐）
+  railY: 118, // 流程轨 y（overlay/Overlay 的 Rail）
+  topCapsule: {y: 28, h: 51}, // 顶部 HUD 胶囊（ui.tsx 的 TopCapsule 现值）
+} as const;
+
+export const clamp = (v: number, lo: number, hi: number) => Math.min(hi, Math.max(lo, v));
+export const lerp = (t: number, t0: number, t1: number, v0: number, v1: number) => {
+  if (t1 === t0) return v1;
+  return v0 + (v1 - v0) * clamp((t - t0) / (t1 - t0), 0, 1);
+};
+/** 分段线性关键帧 [frame, value][]。⚠ 首值陷阱：t < 首关键帧返回首值（不是 0）。空数组返回 0（与 easing.ts 同防护）。 */
+export const keyframes = (t: number, kf: Array<[number, number]>) => {
+  if (kf.length === 0) return 0;
+  if (t <= kf[0][0]) return kf[0][1];
+  for (let i = 1; i < kf.length; i++) if (t <= kf[i][0]) return lerp(t, kf[i - 1][0], kf[i][0], kf[i - 1][1], kf[i][1]);
+  return kf[kf.length - 1][1];
+};
+export const stepHold = (t: number, kf: Array<[number, number]>) => {
+  if (kf.length === 0) return 0;
+  if (t < kf[0][0]) return 0;
+  for (let i = kf.length - 1; i >= 0; i--) if (t >= kf[i][0]) return kf[i][1];
+  return 0;
+};
+
+// ---- 方向模糊（SVG feGaussianBlur，σ<0.8 在 Chromium 中无效；禁用 feConvolveMatrix）----
+let blurSeq = 0;
+export const DirBlur: React.FC<{bx: number; by: number; style?: React.CSSProperties; children: React.ReactNode}> = ({bx, by, style, children}) => {
+  const idRef = React.useRef<string | undefined>(undefined);
+  if (!idRef.current) idRef.current = `dirblur-${blurSeq++}`;
+  const id = idRef.current;
+  const active = bx > 0.05 || by > 0.05;
+  return (
+    <AbsoluteFill style={style}>
+      {active ? (
+        <svg width={0} height={0} style={{position: 'absolute'}}>
+          <defs>
+            <filter id={id} x="-60%" y="-60%" width="220%" height="220%" colorInterpolationFilters="sRGB">
+              <feGaussianBlur stdDeviation={`${Math.max(0, bx)} ${Math.max(0, by)}`} />
+            </filter>
+          </defs>
+        </svg>
+      ) : null}
+      <AbsoluteFill style={{filter: active ? `url(#${id})` : undefined}}>{children}</AbsoluteFill>
+    </AbsoluteFill>
+  );
+};
+
+// ---- SVG filter 实例预算（方案 §U9：单帧 ≤6 红线的自查闸门。既有 filter 实例靠 fx.tsx 的 haloSeq / blurSeq 这类模块级序号隔离 id，
+//      这里用同一模式给分镜阶段一个全局计数器：挂 filter 的组件在挂载处 take() 登记，镜头开工时 reset() 归零自查。）----
+let filterCount = 0;
+export const filterBudget = {
+  max: 6,
+  /** 当前已登记的 SVG filter 实例数。 */
+  used: () => filterCount,
+  /** 登记一个 filter 实例（tag 仅用于告警定位）；超过 max 时开发态（NODE_ENV !== production）console.warn。 */
+  take: (tag?: string) => {
+    filterCount += 1;
+    if (process.env.NODE_ENV !== 'production' && filterCount > filterBudget.max) {
+      console.warn(`[filterBudget] SVG filter 实例 ${filterCount} 超过单帧上限 ${filterBudget.max}${tag ? `：${tag}` : ''}（性能红线 ≤6，须删减或合并 bloom/blur）`);
+    }
+    return filterCount;
+  },
+  /** 帧边界 / 镜头开工时归零。 */
+  reset: () => {
+    filterCount = 0;
+  },
+};
+
+// ---- 字体（全部随模板附带，OFL 许可；Noto Sans SC 含完整拉丁字形，英文片同样用它做正文/字幕）----
+export const FONT_HEAVY = `'Noto Sans SC', 'PingFang SC', 'Hiragino Sans GB', sans-serif`; // 全部中文：标题 900（常 scaleX .8–.85 压窄）、标签 600–800、字幕 700
+export const FONT_TECH = `'Exo 2', 'Helvetica Neue', sans-serif`; // 英文技术词：紫色粗斜体 + scaleX .8
+export const FONT_WIDE = `'Audiowide', 'Orbitron', sans-serif`; // 宽体展示字（片名 / 大写缩写）
+export const FONT_ORB = `'Orbitron', 'Audiowide', sans-serif`; // 数字 / 章序号 / HUD 计数
+export const FONT_MONO = `'SF Mono', Menlo, Consolas, monospace`; // 代码 / 向量数字
+export const FONT_SERIF = `'Times New Roman', Times, serif`; // 公式
+export const FONT_EN = `'Helvetica Neue', Helvetica, Arial, sans-serif`;
+
+// ---- 语言开关（src/config.ts 的 VIDEO.lang）----
+/** 'zh' 中文片（默认）｜'en' 英文片。影响：字体压窄系数、基线补偿、文案与字幕预算（见 reference/narration-storyboard.md §5）。 */
+export const LANG = VIDEO.lang ?? 'zh';
+/** 中文标题惯用 scaleX .8–.85 压窄；拉丁字母压窄会变形，英文片一律 1。 */
+export const SQUEEZE = LANG === 'en' ? 1 : 0.85;
+/** CJK 行盒 ascent 让墨迹比 top 低 3–7px，居中要预扣；拉丁不需要。 */
+export const TEXT_DY = LANG === 'en' ? 0 : -2;
+
+/** 在 Main 顶层挂一次；用 delayRender 等字体就绪。 */
+export const Fonts: React.FC = () => {
+  const [handle] = React.useState(() => delayRender('fonts'));
+  React.useEffect(() => {
+    Promise.all([
+      new FontFace('Noto Sans SC', `url(${staticFile('fonts/NotoSansSC.ttf')})`, {weight: '100 900'} as FontFaceDescriptors).load(),
+      new FontFace('Exo 2', `url(${staticFile('fonts/Exo2-Italic.ttf')})`, {weight: '100 900', style: 'italic'} as FontFaceDescriptors).load(),
+      new FontFace('Audiowide', `url(${staticFile('fonts/Audiowide-Regular.ttf')})`).load(),
+      new FontFace('Orbitron', `url(${staticFile('fonts/Orbitron[wght].ttf')})`, {weight: '400 900'} as FontFaceDescriptors).load(),
+      // epic 配方两款衬线（OFL 许可随 fonts/ 目录分发；Fraunces 斜体为浏览器合成斜——Rite.tsx 先例过验）
+      new FontFace('Noto Serif SC', `url(${staticFile('fonts/NotoSerifSC[wght].ttf')})`, {weight: '100 900'} as FontFaceDescriptors).load(),
+      new FontFace('Fraunces', `url(${staticFile('fonts/Fraunces[SOFT,WONK,opsz,wght].ttf')})`, {weight: '100 900'} as FontFaceDescriptors).load(),
+    ])
+      .then((fs) => {
+        fs.forEach((f) => (document.fonts as unknown as {add: (f: FontFace) => void}).add(f));
+        continueRender(handle);
+      })
+      .catch(() => continueRender(handle));
+  }, [handle]);
+  return null;
+};

@@ -1,0 +1,48 @@
+# Node
+node_modules/
+*.tsbuildinfo
+
+# 渲染与运行期产物（本仓只放长期资产；项目工程在 A2V_DATA_ROOT）
+renders/
+fin_frames/
+stills/
+build*/
+out/
+audio/cache/
+
+# Python
+__pycache__/
+.pytest_cache/
+*.pyc
+
+# 系统与编辑器
+.DS_Store
+Thumbs.db
+*.log
+.venv/
+.render-bundle/
+.after*_stills/
+.baseline_stills/
+.verify*_bundle/
+.probe-tmp/
+dist/
+*.mimosa/
+.mimosa/
+.Codex/
+.render-bundle-*/
+*.render.lock
+.render-*
+docs/*-worker-report.md
+docs/work-items/
+docs/adversarial-v3-report.md
+docs/audio-boundaries-v3-report.md
+docs/editions-resume-coordination.md
+docs/forward-v3-report.md
+tests/fullflow/
+
+# 外部曲（版权未核实的用户指定曲）：wx-* 四首经用户拍板随仓库分发（标注见 assets/audio/ATTRIBUTION.md），其余仅本机
+assets/audio/bgm/*.wav
+!assets/audio/bgm/wx-*.wav
+
+# 宿主发行包（构建产物，build-editions.mjs 产、只本机/Release 分发）
+editions/
